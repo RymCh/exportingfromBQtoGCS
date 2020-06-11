@@ -1,0 +1,15 @@
+cd ~
+
+virtualenv venv
+
+source venv/bin/activate
+
+cd home/yourproject
+
+gcloud auth activate-service-account yourserviceaccount@intern-253722.iam.gserviceaccount.com --key-file=keyfile.json
+
+table_id=$1
+
+file_id=$2
+
+python exporting.py –t  New_table -f my-csv-file.csv
